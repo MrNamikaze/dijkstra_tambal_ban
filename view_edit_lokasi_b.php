@@ -97,7 +97,7 @@
         const width = marker.properties.iconSize[0];
         const height = marker.properties.iconSize[1];
         el.className = 'marker_lokasi';
-        el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
+        el.style.backgroundColor = `black`;
         el.style.width = `40px`;
         el.style.height = `40px`;
         el.style.backgroundSize = '100%';

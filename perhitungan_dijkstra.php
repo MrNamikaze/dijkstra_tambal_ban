@@ -3,11 +3,11 @@
 /*
  * Author: doug@neverfear.org
  */
-
+session_start();
 require("Dijkstra.php");
 function runTest() {
 	require_once("koneksi.php");
-	$id_user = $_COOKIE["user"];
+	$id_user = $_SESSION['konsumen'];
 	$sql = "SELECT * FROM konsumen WHERE id_user = '$id_user'";
     $row = $db->prepare($sql);
     $row->execute();
@@ -276,8 +276,6 @@ function runTest() {
 	    else{
 	        $usr = 2;
 	    }
-
-
     }
 	
 }

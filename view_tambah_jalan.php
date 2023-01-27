@@ -46,8 +46,8 @@
             </div>
             <?php endif;?>
         <form class="user" action="proses_jalan.php" method="POST" enctype="multipart/form-data">
-            <input type="text" class="form-control" id="id_before" name="id_before" >
-            <input type="text" class="form-control" id="id_after" name="id_after" >
+            <input type="text" class="form-control" id="id_before" name="id_before" hidden>
+            <input type="text" class="form-control" id="id_after" name="id_after" hidden>
             <div id='map_lokasi' style='width: 100%; height: 400px;'></div>
             <br>
             <input type="submit" name="register" class="btn btn-primary btn-user btn-block" value="Tambah!!" style="width: 83%">
@@ -124,7 +124,7 @@
         const width = marker.properties.iconSize[0];
         const height = marker.properties.iconSize[1];
         el.className = 'marker_lokasi';
-        el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
+        el.style.backgroundColor = `red`;
         el.style.width = `40px`;
         el.style.height = `40px`;
         el.style.backgroundSize = '100%';

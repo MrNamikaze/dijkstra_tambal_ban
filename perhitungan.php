@@ -5,11 +5,11 @@ if(is_null($_SESSION["user"])){
 }
 else{
     require_once("koneksi.php");
-    $long_before = 112.0617703528763;
-    $latitude_before = -6.8995637843220265;
+    $long_before = 112.05695;
+    $latitude_before = -6.896012;
 
-    $long_after = 112.06338625115114;
-    $latitude_after = -6.900014011453692;
+    $long_after = 112.05697271481608;
+    $latitude_after = -6.896002251528017;
 
     $earthRadius = 6371000;
     $latFrom = deg2rad($latitude_before);

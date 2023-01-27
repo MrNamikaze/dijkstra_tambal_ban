@@ -1,19 +1,11 @@
 <?php
+session_start();
 require_once("koneksi.php");
 $longitude = filter_input(INPUT_POST, 'longitude', FILTER_SANITIZE_STRING);
 $latitude = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
 date_default_timezone_set("Asia/Jakarta");
 $waktu = date("H:i:s");
-$random = rand(10000000,99999999);
-$cookie_name = "user";
-if(!isset($_COOKIE[$cookie_name])) {
-  $cookie_value = $random;
-  setcookie($cookie_name, $cookie_value, time() + (3600), "/");
-  $id_user = $_COOKIE[$cookie_name];
-} 
-else {
-	$id_user = $_COOKIE[$cookie_name];
-}
+$id_user = $_SESSION['konsumen'];
 $sql = "SELECT * FROM konsumen WHERE id_user = '$id_user'";
 $row = $db->prepare($sql);
 $row->execute();

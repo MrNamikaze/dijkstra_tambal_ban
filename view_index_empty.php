@@ -43,6 +43,11 @@
                                 <button type="submit" class="btn btn-primary">Cari bantuan!!</button>
                             </form>
                         </li>
+                        &emsp;
+                        <li class="nav-item"><a class="btn btn-primary" href="login.php">Login</a></li>
+                        &emsp;
+                        <li class="nav-item"><a class="btn btn-primary" href="register.php">Register</a></li>
+                        &emsp;
                     </ul>
                 </div>
             </div>
@@ -88,8 +93,7 @@
                 {
                 'type': 'Feature',
                 'properties': {
-                'message': '<strong>Lokasi Anda Saat Ini</strong><br>'+
-                '<a href="proses_lokasi.php?id=tutup" class="btn btn-primary" style="height: 20%">Delete</a>',
+                'message': '<strong>Lokasi Anda Saat Ini</strong><br>',
                 'iconSize' : [60,60]
                 },
                 'geometry': {
@@ -112,8 +116,7 @@
                 'properties': {
                 'message': '<strong>Nama: <?= $nama?></strong><br>'+
                 '<strong>Alamat: <?= $alamat?></strong><br>'+
-                '<strong>Status: <?= $status?></strong><br>'+
-                '<a href="proses_lokasi.php?id=<?= $id_tambal?>" class="btn btn-primary" style="height: 20%">Delete</a>',
+                '<strong>Status: <?= $status?></strong><br>',
                 'iconSize' : [40,40]
                 },
                 'geometry': {
@@ -137,7 +140,12 @@
                 const width = marker.properties.iconSize[0];
                 const height = marker.properties.iconSize[1];
                 el.className = 'marker_lokasi';
-                el.style.backgroundImage = `url(https://placekitten.com/g/${width}/${height}/)`;
+                if(width==40){
+                    el.style.backgroundColor = `black`;
+                }
+                else{
+                    el.style.backgroundColor = `blue`;
+                }
                 el.style.width = `40px`;
                 el.style.height = `40px`;
                 el.style.backgroundSize = '100%';
